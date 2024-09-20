@@ -1,8 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import TeacherSession from './pages/TeacherSession';
-import LoginScreen from './pages/LoginScreen'; 
-import Scoreboard from './pages/Scoreboard';
 import styled from 'styled-components';
 import logo from './imagens/logo.svg';
 
@@ -47,25 +43,12 @@ const SelectionScreen: React.FC = () => {
     <Container>
       <Logo src={logo} alt="Logo" />
       <ButtonContainer>
-        <Link to="/professor"><Button borderColor="#ff4c4c">Professor</Button></Link> 
-        <Link to="/aluno"><Button borderColor="#ff4c4c">Aluno</Button></Link> 
-        <Link to="/painel"><Button borderColor="#4c9fff">Painel</Button></Link> 
+        <Button borderColor="#ff4c4c">Professor</Button>
+        <Button borderColor="#ff4c4c">Aluno</Button>
+        <Button borderColor="#4c9fff">Painel</Button>
       </ButtonContainer>
     </Container>
   );
 };
 
-const App: React.FC = () => {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" Component={SelectionScreen}/>
-        <Route path="/professor" Component={TeacherSession} /> 
-        <Route path="/aluno" Component={LoginScreen} /> 
-        <Route path="/painel" Component={Scoreboard} /> 
-      </Routes>
-    </Router>
-  );
-};
-
-export default App;
+export default SelectionScreen;
